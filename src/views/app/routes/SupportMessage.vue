@@ -174,12 +174,13 @@ export default {
             chatSheet.scrollTop = chatSheet.scrollHeight - chatSheet.clientHeight;
         },
 
-        sendMessage() {
+        async sendMessage() {
             if (this.message == '') return
+            let admin = await localStorage.blueZoneAdminToken
 
             addDoc(collection(db, "support", this.$route.params.id, 'messages'), {
                 message: this.message,
-                user: localStorage.blueZoneAdminToken,
+                user: admin,
                 timestamp: serverTimestamp()
             })
             this.message = ''
