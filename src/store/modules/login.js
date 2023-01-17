@@ -3,8 +3,8 @@ import { auth } from "@/plugins/firebase";
 import router from "@/router";
 
 const state = {
-    email: 'support@bluezone-finance.com',
-    password: 'admin%dollars',
+    email: 'rukkiecodes@gmail.com',
+    password: 'Iam@codemonster',
     loading: false,
 }
 

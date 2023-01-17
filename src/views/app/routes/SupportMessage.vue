@@ -130,7 +130,7 @@ export default {
         loading: false,
         chats: [],
         message: "",
-        admin: import.meta.env.VITE_admin
+        admin: localStorage.blueZoneAdminToken
     }),
 
     mounted() {
@@ -179,7 +179,7 @@ export default {
 
             addDoc(collection(db, "support", this.$route.params.id, 'messages'), {
                 message: this.message,
-                user: import.meta.env.VITE_admin,
+                user: localStorage.blueZoneAdminToken,
                 timestamp: serverTimestamp()
             })
             this.message = ''

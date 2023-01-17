@@ -7,7 +7,8 @@ const state = {
 
 const actions = {
     async getUserProfile() {
-        const profile = await (await getDoc(doc(db, "admin", import.meta.env.VITE_admin))).data()
+        let admin = await localStorage.blueZoneAdminToken
+        const profile = await (await getDoc(doc(db, "admin", admin))).data()
         this.state.getProfile = { ...profile }
     }
 }
